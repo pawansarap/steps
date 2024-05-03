@@ -8,12 +8,14 @@ const messages = [
 
 export default function App() {
   const [step, setStep] = useState(1);
-
+  // const [test, setTest] = useState({name: " Pawan"});
   function handleNext() {
     if(step < 3) setStep(step + 1);
+    // setTest({name:" Keep Gooing Pawan"});
   }
   function handlePrevious() {
     if(step >1 ) setStep(step - 1);
+    // setTest({name:" Try One More Time Pawan"});
   }
   return (
     <div className="steps">
@@ -24,6 +26,7 @@ export default function App() {
       </div>
       <p className="message">
         Step {step}: {messages[step - 1]}
+        {/* { test.name} */}
       </p>
       <div className="buttons">
         <button

@@ -41,10 +41,7 @@ export default function App() {
             <div className={step >= 2 ? "active" : ""}>2</div>
             <div className={step >= 3 ? "active" : ""}>3</div>
           </div>
-          <p className="message">
-            Step {step}: {messages[step - 1]}
-            {/* { test.name} */}
-          </p>
+          <SetpMessage step={step}>{messages[step - 1]}</SetpMessage>
           <div className="buttons">
             <Button textColor="#fff" bgColor="#7950f2" onClick={handlePrevious}>
               <span>👈</span> Previous
@@ -58,8 +55,16 @@ export default function App() {
     </>
   );
 }
-
 // children is the pre define key word of react
+function SetpMessage({ step, children }) {
+  return (
+    <div className="message">
+      <h3>Step {step}</h3>
+      {children}
+    </div>
+  );
+}
+
 function Button({ textColor, bgColor, onClick, children }) {
   return (
     <button
